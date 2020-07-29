@@ -2,6 +2,8 @@ version: "3.3"
 
 services:
   nginx:
+    ports:
+    - 80:80
     # ---
     image: nginx
     networks:
@@ -14,7 +16,7 @@ services:
       - nginx
     image: postgres
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
     networks:
       - barlijst
     environment:
@@ -36,3 +38,6 @@ services:
 
 networks:
   barlijst:
+
+volumes:
+  postgres-data:
