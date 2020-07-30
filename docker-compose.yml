@@ -31,7 +31,7 @@ services:
       - barlijst
   frontend:
     # ---
-    image: docker.oetze.nl/gemmabarspa:offline
+    image: docker.oetze.nl/gemmabarspa:thuis
     networks:
       - barlijst
     restart: always
