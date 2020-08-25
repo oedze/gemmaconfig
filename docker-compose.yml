@@ -11,17 +11,19 @@ services:
     volumes:
       - ./new-config-2.conf:/etc/nginx/conf.d/config.conf
     restart: always
-  database:
     depends_on:
-      - nginx
+      - backend
+  database:
     image: postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    restart: always
     networks:
       - barlijst
     environment:
       POSTGRES_PASSWORD: postgres
   backend:
+    restart: always
     depends_on:
       - database
     image: docker.oetze.nl/gemmabar:thuis
