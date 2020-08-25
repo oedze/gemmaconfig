@@ -27,6 +27,8 @@ services:
     image: docker.oetze.nl/gemmabar:thuis
     environment:
       ASPNETCORE_URLS: http://+:8000
+    volumes:
+      - images:/Images
     networks:
       - barlijst
   frontend:
@@ -41,3 +43,4 @@ networks:
 
 volumes:
   postgres-data:
+  images:
