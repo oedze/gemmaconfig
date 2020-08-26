@@ -30,7 +30,7 @@ services:
     environment:
       ASPNETCORE_URLS: http://+:8000
     volumes:
-      - images:/Images
+      - images:/app/Images
     networks:
       - barlijst
   frontend:
